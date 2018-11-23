@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText name,details,appointment,phone,email;
-    Button addButton,viewBtn;
+    private Button addButton,viewBtn,historyBtn;
     private DBManager dbManager;
 
 
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         addButton = findViewById(R.id.addBtn);
         viewBtn = findViewById(R.id.viewBtn);
+        historyBtn = findViewById(R.id.historyBtn);
 
         DBHelper dbHelper = new DBHelper(this);
         dbManager = new DBManager(this);
@@ -60,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ListActivity.class);
+                startActivity(intent);
+            }
+        });
+        historyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,HistoryActivity.class);
                 startActivity(intent);
             }
         });
