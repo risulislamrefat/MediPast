@@ -150,9 +150,5 @@ public class HistoryActivity extends AppCompatActivity {
         return Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
     }
 
-    public static Bitmap decodeImage(String input) {
 
-        byte[] decodebyte = Base64.decode(input, Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(decodebyte, 0, decodebyte.length);
-    }
 }
